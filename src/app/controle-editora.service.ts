@@ -20,7 +20,7 @@ export class ControleEditoraService {
   }
 
   getNomeEditora(codEditora: number): string {
-    const editoraEncontrada = this.editoras.find(editora => editora.getCodEditora() === codEditora);
+    const editoraEncontrada = this.editoras.find(editora => editora.getCodEditora() == codEditora);
 
 
     return editoraEncontrada ? editoraEncontrada.getNome() : 'Editora não encontrada';

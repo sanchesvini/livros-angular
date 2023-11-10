@@ -25,7 +25,7 @@ export class ControleLivrosService {
       this.livros.push(livro);
       console.log("Livro adicionado na lista:");
       this.livros.forEach((livro) => {
-        console.log(`Código: ${livro.getCodigo()}, Título: ${livro.getTitulo()}, ${livro.getResumo()}, ${livro.getAutores()}`);
+        console.log(`Código: ${livro.getCodigo()}, Título: ${livro.getTitulo()}, ${livro.getResumo()}, ${livro.getAutores()}, ${livro.getCodEditora()}`);
       });
     } else {
       console.error('Não é uma instância de Livro');

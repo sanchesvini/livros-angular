@@ -1,29 +1,33 @@
 <main class="container mt-4">
-    <h2>Lista de Livros</h2>
+    <h2>Catálogo de Livros</h2>
 
-    <table class="table table-bordered">
+    <table class="table ">
         <thead>
-            <tr>
-                <th>Código</th>
-                <th>Título</th>
-                <th>Editora</th>
-                <th>Autores</th>
-                <th>Ações</th>
+            <tr class="bg-dark">
+                <th class="text-light font-weight-normal">Título</th>
+                <th class="text-light font-weight-normal">Resumo</th>
+                <th class="text-light font-weight-normal">Editora</th>
+                <th class="text-light font-weight-normal">Autores</th>
+
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let livro of livros">
-                <td>{{ livro.getCodigo()}}</td>
-                <td>{{ livro.getTitulo() }}</td>
+
+                <td class="d-flex flex-column">
+                    {{ livro.getTitulo() }}
+                    <button class="btn btn-danger" (click)="excluir(livro.getCodigo())">
+                        Excluir
+                    </button>
+                </td>
+                <td>{{ livro.getResumo() }}</td>
                 <td>{{ obterNome(livro.getCodEditora()) }}</td>
                 <td>
                     <ul>
                         <li *ngFor="let autor of livro.getAutores()">{{ autor }}</li>
                     </ul>
                 </td>
-                <td>
-                    <button class="btn btn-danger" (click)="excluir(livro.getCodigo())">Excluir</button>
-                </td>
+
             </tr>
         </tbody>
     </table>

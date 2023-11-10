@@ -19,25 +19,18 @@ export class LivroListaComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // Preencher o vetor editoras com o método getEditoras de servEditora
     this.editoras = this.servEditora.getEditoras();
 
-    // Preencher o vetor livros com o método obterLivros de servLivros
     this.livros = this.servLivros.obterLivros();
   }
 
-  // Método para excluir um livro com base no código
   excluir = (codigo: number): void => {
-    // Invocar o método excluir de servLivros
     this.servLivros.excluir(codigo);
 
-    // Preencher novamente o vetor livros com o método obterLivros de servLivros
     this.livros = this.servLivros.obterLivros();
   };
 
-  // Método para obter o nome da editora com base no codEditora
   obterNome = (codEditora: number): string => {
-    // Invocar o método getNomeEditora de servEditora
     return this.servEditora.getNomeEditora(codEditora);
   };
 }
